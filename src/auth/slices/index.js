@@ -1,7 +1,7 @@
 import {combineReducers} from "@reduxjs/toolkit";
 //import all your reducres
-import sampleReducer from "./sampleSlice";
+import authSlice from './authSlice';
 
 export default combineReducers({
-    sample: sampleReducer,
+    auth:authSlice,
 });

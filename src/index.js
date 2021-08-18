@@ -1,18 +1,25 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import App from "./App";
-import store from "./store";
-import {Provider} from "react-redux";
-import AuthProvider from "./components/AuthProvider";
-import reportWebVitals from "./reportWebVitals";
+import ReactDOM from 'react-dom';
+import App from './App';
+import store from './store';
+import { Provider } from 'react-redux';
+import { ChakraProvider } from '@chakra-ui/react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import AuthProvider from './components/AuthProvider';
+import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Provider store = {store}>
-        <App />
-      </Provider>
-    </AuthProvider>
+    <Router>
+      <Auth0ProviderWithHistory>
+        <Provider store={store}>
+          <ChakraProvider>
+            <App />
+          </ChakraProvider>
+        </Provider>
+      </Auth0ProviderWithHistory>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
