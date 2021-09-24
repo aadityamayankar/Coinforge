@@ -1,3 +1,4 @@
+import './App.css';
 import Account from './views/Account';
 import LandingPage from './views/LandingPage';
 import Dashboard from './views/Dashboard';
@@ -14,38 +15,46 @@ import {
   PORTFOLIO,
   PREDICTOR,
   NEWS,
+  COINS,
+  ABOUT,
 } from './constants/routes';
 import { Switch, Route } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
 import Navbar from './components/Navbar/Navbar';
+import Coin from './views/Coin';
+import About from './views/About';
 
 function App() {
-  const { isLoading, isAuthenticated,user } = useAuth0();
-
   return (
     <>
       <Switch>
         <PublicRoute exact path={LANDING_PAGE}>
-          <LandingPage/>
+          <LandingPage />
         </PublicRoute>
         <PrivateRoute exact path={DASHBOARD}>
-          <Navbar active="Dashboard" />
+          <Navbar active='Dashboard' />
           <Dashboard />
         </PrivateRoute>
+        <PrivateRoute exact path={COINS}>
+          <Navbar />
+          <Coin />
+        </PrivateRoute>
         <PrivateRoute exact path={PORTFOLIO}>
-          <Navbar active="Portfolio" />
+          <Navbar active='Portfolio' />
           <Portfolio />
         </PrivateRoute>
         <PrivateRoute exact path={PREDICTOR}>
-          <Navbar active="Predictor" />
+          <Navbar active='Predictor' />
           <Predictor />
         </PrivateRoute>
         <PrivateRoute exact path={ACCOUNT}>
-          <Navbar active="Account" />
+          <Navbar active='Account' />
           <Account />
         </PrivateRoute>
+        <PrivateRoute exact path={ABOUT}>
+          <About />
+        </PrivateRoute>
         <PrivateRoute exact path={NEWS}>
-          <Navbar active="News" />
+          <Navbar active='News' />
           <News />
         </PrivateRoute>
         <Route path='*'>

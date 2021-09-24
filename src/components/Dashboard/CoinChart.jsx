@@ -1,69 +1,48 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import {LineChart,Line,ResponsiveContainer} from 'recharts';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { useColorMode } from '@chakra-ui/react';
 
-const CoinChart = ({ id, color}) => {
-  const { getAccessTokenSilently } = useAuth0();
-  const [data, setData] = useState();
-  const [isDataLoading, setisDataLoading] = useState(true);
-  const [isDataError, setIsDataError] = useState();
-
-  const fetchData = () => {
-    let jwtToken;
-    getAccessTokenSilently()
-      .then((token) => {
-        jwtToken = token;
-      })
-      .then(() => {
-        axios
-          .get(`http://localhost:8080/api/crypto_chart/${id}`,{
-              headers:{
-                authorization: `Bearer ${jwtToken}`,
-              }
-          })
-          .then((response) => {
-            setisDataLoading(false);
-            setData(response.data);
-          })
-          .catch((e) => {
-            setisDataLoading(false);
-            setIsDataError(e);
-            console.log(e);
-          });
-      })
-      .catch((e) => {
-        setisDataLoading(false);
-        setIsDataError(e);
-        console.log(e);
-      });
+const CoinChart = ({ id, color }) => {
+  const { colorMode } = useColorMode();
+  const cryptoSparklineData = useSelector((state) => state.cryptoSparklineData);
+  const coin = cryptoSparklineData.data[id];
+  // console.log(coin);
+  const LinearGradientFill = (stopColor) => {
+    return (
+      <linearGradient id='gradient' x1='0%' y1='0%' x2='0%' y2='100%'>
+        <stop
+          offset='0%'
+          stopColor={colorMode === 'light' ? 'black' : 'white'}
+          stopOpacity='1'
+        />
+        <stop
+          offset='100%'
+          stopColor={colorMode === 'light' ? 'black' : 'white'}
+          stopOpacity='0'
+        />
+      </linearGradient>
+    );
   };
-
-  useEffect(() => {
-    if (id) {
-      fetchData();
-    }
-  }, [fetch, id]);
-
-  // console.log(data);
-
-  const mappedData = useMemo(() => {
-    return data?.prices.length
-      ? data.prices.map((ele) => ({
-          date: (new Date(ele[0])).toString().substring(0,10),
-          price: ele[1],
-        }))
-      : [];
-  }, [data]);
-
-  // console.log(JSON.stringify(mappedData));
 
   return (
     <>
-      {id}
-      <LineChart width={150} height={50} data = {mappedData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <Line type="linear" dataKey="price" stroke={color} dot={false} />
-      </LineChart>
+      <Sparklines svgHeight={50} svgWidth={150} data={coin.sparkline}>
+        <svg>
+          <defs>
+            <LinearGradientFill />
+          </defs>
+        </svg>
+
+        <SparklinesLine
+          style={{
+            strokeWidth: '2',
+            fill: 'url(#gradient)',
+          }}
+          color={color}
+        />
+      </Sparklines>
     </>
   );
 };

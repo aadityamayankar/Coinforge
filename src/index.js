@@ -4,8 +4,7 @@ import App from './App';
 import store from './store';
 import { Provider } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
-import {BrowserRouter as Router} from 'react-router-dom';
-import AuthProvider from './components/AuthProvider';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Auth0ProviderWithHistory from './auth/Auth0ProviderWithHistory';
 import reportWebVitals from './reportWebVitals';
 

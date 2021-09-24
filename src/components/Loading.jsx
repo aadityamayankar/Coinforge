@@ -1,6 +1,6 @@
 import { Spinner } from '@chakra-ui/react';
 
-const Loading = ({pos}) => {
+const Loading = ({ pos }) => {
   return (
     <Spinner
       position={pos}

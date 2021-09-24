@@ -4,7 +4,7 @@ import {Box} from '@chakra-ui/react';
 const Copyright = (props) => {
   return(
     <Box {...props}>
-      <Text fontFamily='montserrat'>
+      <Text fontFamily='Inter'>
         &copy; {new Date().getFullYear()} Coinforge, Inc. All rights reserved.
       </Text>
     </Box>
