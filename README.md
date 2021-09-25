@@ -1,16 +1,26 @@
-[![Coinforge.png](https://i.postimg.cc/4Nh6F4WR/Coinforge.png)](https://postimg.cc/2VrL1Yp0)
+<p align="center">
+  <img src='https://i.postimg.cc/4Nh6F4WR/Coinforge.png' alt = 'Coinforge.png'/>
+</p>
 
-[coinfoge.com]()
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Material UI](https://img.shields.io/badge/materialui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+
+<!-- [coinfoge.com]() -->
 
 # About
 
 Coinforge is a mock cryptocurrency trading web app aiming to help begginers to gain trading experience before diving into deep waters.
 
 ## Technologies Used
-* React js
-* Express js
-* Mongo DB
-* Recharts / Visx (D3)
+* [React js](https://react.com) 
+* [Express js](https://expressjs.com/)
+* [Mongo DB](https://docs.atlas.mongodb.com/)
+* [Recharts](https://recharts.org/) / [Visx](https://airbnb.io/visx/) (D3)
+
 
 ## Architecture
 
@@ -85,3 +95,7 @@ cd ..
 ```
 npm run dev
 ```
+
+## License
+
+This project is licensed under the MIT License 
