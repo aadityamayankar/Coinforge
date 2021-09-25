@@ -33,6 +33,7 @@ The architecture of this application is based on a typical MVC model.
 <br>
 
 ![architecture.png](https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/images/image2.png)
+
 Architectural pattern for a simple three-tier application.
 _Picture from [aws docs](https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/three-tier-architecture-overview.html)_
 
