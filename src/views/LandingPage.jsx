@@ -7,7 +7,6 @@ import {
   Center,
   Stack,
   Image,
-  SimpleGrid,
   Text,
   ChakraProvider,
   useColorMode,
@@ -16,7 +15,7 @@ import { default as theme } from '../landingTheme';
 import GetStartedButton from '../components/LandingPage/GetStartedButton';
 import Moon from '../components/LandingPage/Moon';
 import Footer from '../components/Footer/Footer';
-import FeatureCard from '../components/LandingPage/FeatureCard';
+import FeatureCards from '../components/LandingPage/FeatureCards';
 import FadeInSection from '../components/FadeIn/FadeInSection';
 import dashboardpng from '../assets/landingPage/dashboard.png';
 import assetpng from '../assets/landingPage/asset.png';
@@ -183,46 +182,7 @@ const LandingPage = () => {
                         Features
                       </Text>
                     </Box>
-                    <Box>
-                      <SimpleGrid columns={{ sm: 2, md: 3 }} spacing='4'>
-                        <FeatureCard
-                          data={{
-                            title: 'Manage Portfolio',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                        <FeatureCard
-                          data={{
-                            title: 'Predict Prices',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                        <FeatureCard
-                          data={{
-                            title: 'News',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                        <FeatureCard
-                          data={{
-                            title: 'Buy / Sell Crypto',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                        <FeatureCard
-                          data={{
-                            title: 'Portfolio',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                        <FeatureCard
-                          data={{
-                            title: 'Open Source',
-                            body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum',
-                          }}
-                        />
-                      </SimpleGrid>
-                    </Box>
+                    <FeatureCards />
                   </Stack>
                 </Center>
               </Box>

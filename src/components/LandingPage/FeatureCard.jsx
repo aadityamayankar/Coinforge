@@ -1,25 +1,17 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
-const FeatureCard = (props) => {
-  const data = props.data;
-
+const FeatureCard = ({ title, data, icon }) => {
   return (
     <Box maxW='300px' borderRadius='5px' overflow='hidden' textAlign='center'>
-      <Box>
-        <Image
-          ml='auto'
-          mr='auto'
-          src='https://via.placeholder.com/75x75.png/FFFFFF'
-        />
-      </Box>
+      <Box>{icon}</Box>
       <Box p={5}>
         <Box>
           <Text fontSize='md' fontWeight='bold'>
-            {data.title}
+            {title}
           </Text>
         </Box>
         <Box>
-          <Text>{data.body}</Text>
+          <Text>{data}</Text>
         </Box>
       </Box>
     </Box>
