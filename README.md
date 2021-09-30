@@ -14,7 +14,7 @@
 
 # About
 
-Coinforge is a mock cryptocurrency trading web app aiming to help begginers to gain trading experience before diving into deep waters.
+Coinforge is a mock cryptocurrency trading web app aiming to help beginners to gain trading experience before diving into deep waters.
 
 ## Technologies Used
 * [React js](https://react.com) 
